@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', 'Merriweather', Georgia, serif;
+    --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --color-natural-bg: #FDFCF8;
+    --color-natural-canvas: #F5F2ED;
+    --color-natural-sidebar: #FAF8F5;
+    --color-natural-card: #F2EFE9;
+    --color-natural-olive: #5A5A40;
+    --color-natural-dark-olive: #444433;
+    --color-natural-border: #E5E1D8;
+    --color-natural-muted: #99948D;
+    --color-natural-subtext: #A6A198;
+    --color-natural-text: #333333;
+  }
+}
+
+.font-serif-book {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-body {
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans-modern {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-reader {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* 3D Perspective Book Flip */
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Realistic natural paper shadow and textures */
+.paper-shadow-right {
+  box-shadow: inset 24px 0 35px -15px rgba(68, 68, 51, 0.12), 12px 14px 28px -4px rgba(68, 68, 51, 0.15);
+}
+
+.paper-shadow-left {
+  box-shadow: inset -24px 0 35px -15px rgba(68, 68, 51, 0.12), -12px 14px 28px -4px rgba(68, 68, 51, 0.15);
+}
+
+.paper-spine-crease {
+  background: linear-gradient(90deg, 
+    rgba(68, 68, 51, 0.28) 0%, 
+    rgba(68, 68, 51, 0.12) 3%, 
+    rgba(255, 255, 255, 0.15) 5%, 
+    transparent 15%, 
+    transparent 85%, 
+    rgba(255, 255, 255, 0.15) 95%, 
+    rgba(68, 68, 51, 0.12) 97%, 
+    rgba(68, 68, 51, 0.28) 100%);
+}
+
+.paper-texture-overlay {
+  background-image: radial-gradient(rgba(90, 90, 64, 0.04) 1px, transparent 0);
+  background-size: 8px 8px;
+}
+
+/* Custom scrollbars with Natural Tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(153, 148, 141, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 90, 64, 0.6);
+}

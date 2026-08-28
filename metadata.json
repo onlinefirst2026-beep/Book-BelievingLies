@@ -1,0 +1,7 @@
+{
+  "name": "The Danger of Believing Lies",
+  "description": "An interactive digital flipbook reader for 'The Danger of Believing Lies: Lessons from the Old and Young Prophet in 1 Kings 13 for This Generation', featuring page flip animations, custom typography, illustrations, and reading customization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
