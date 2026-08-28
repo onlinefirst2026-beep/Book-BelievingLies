@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BookChapter, Bookmark } from '../types';
-import { BOOK_CHAPTERS, PDF_PAGES } from '../data/bookData';
-import { X, Search, Bookmark as BookmarkIcon, BookOpen, Layers, CheckCircle2, ChevronRight, Hash } from 'lucide-react';
+import { BOOK_CHAPTERS, PDF_PAGES, BOOK_METADATA } from '../data/bookData';
+import authorPortraitImg from '../assets/images/author_portrait_real_cecilia_1787931354245.jpg';
+import { X, Search, Bookmark as BookmarkIcon, BookOpen, Layers, CheckCircle2, ChevronRight, Hash, User, ShieldCheck, Heart, BookMarked, Sparkles } from 'lucide-react';
 
 interface TableOfContentsProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface TableOfContentsProps {
   onSelectChapter: (chapter: BookChapter) => void;
   bookmarks: Bookmark[];
   onRemoveBookmark: (id: string) => void;
+  onOpenAuthorModal?: () => void;
 }
 
 export const TableOfContents: React.FC<TableOfContentsProps> = ({
@@ -22,8 +24,9 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
   onSelectChapter,
   bookmarks,
   onRemoveBookmark,
+  onOpenAuthorModal,
 }) => {
-  const [activeTab, setActiveTab] = useState<'chapters' | 'pages' | 'bookmarks'>('chapters');
+  const [activeTab, setActiveTab] = useState<'chapters' | 'pages' | 'author' | 'bookmarks'>('chapters');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
 
@@ -77,7 +80,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                 Table of Contents & Navigation
               </h2>
               <p className="text-xs text-[#77726A]">
-                Jump directly to any chapter, page, or saved bookmark
+                Jump directly to any chapter, page, or author section
               </p>
             </div>
           </div>
@@ -91,11 +94,11 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-[#E5E1D8] px-6 pt-2 bg-[#FAF8F5]">
+        <div className="flex border-b border-[#E5E1D8] px-6 pt-2 bg-[#FAF8F5] overflow-x-auto">
           <button
             id="tab-toc-chapters"
             onClick={() => setActiveTab('chapters')}
-            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 ${activeTab === 'chapters' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
+            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 shrink-0 ${activeTab === 'chapters' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
           >
             <BookOpen className="w-4 h-4" />
             <span>Chapters ({BOOK_CHAPTERS.length})</span>
@@ -103,15 +106,23 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
           <button
             id="tab-toc-pages"
             onClick={() => setActiveTab('pages')}
-            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 ${activeTab === 'pages' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
+            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 shrink-0 ${activeTab === 'pages' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
           >
             <Layers className="w-4 h-4" />
             <span>Pages (1 - {PDF_PAGES.length})</span>
           </button>
           <button
+            id="tab-toc-author"
+            onClick={() => setActiveTab('author')}
+            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 shrink-0 ${activeTab === 'author' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
+          >
+            <User className="w-4 h-4" />
+            <span>Author & Legal</span>
+          </button>
+          <button
             id="tab-toc-bookmarks"
             onClick={() => setActiveTab('bookmarks')}
-            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 ${activeTab === 'bookmarks' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
+            className={`pb-3 px-4 text-sm font-medium border-b-2 transition-colors cursor-pointer flex items-center space-x-2 shrink-0 ${activeTab === 'bookmarks' ? 'border-[#5A5A40] text-[#5A5A40] font-bold' : 'border-transparent text-[#77726A] hover:text-[#333333]'}`}
           >
             <BookmarkIcon className="w-4 h-4" />
             <span>Bookmarks ({bookmarks.length})</span>
@@ -139,6 +150,37 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                   <X className="w-4 h-4" />
                 </button>
               )}
+            </div>
+
+            {/* Front Matter Fast Links */}
+            <div className="flex items-center gap-2 pb-1 overflow-x-auto">
+              <button
+                onClick={() => {
+                  onSelectPage(1);
+                  onClose();
+                }}
+                className="px-3 py-1 rounded-lg text-xs font-semibold bg-[#EFE9DC] hover:bg-[#E2D9C8] text-[#333324] border border-[#D5CDC0] shrink-0"
+              >
+                Dedication (Pg 1)
+              </button>
+              <button
+                onClick={() => {
+                  onSelectPage(2);
+                  onClose();
+                }}
+                className="px-3 py-1 rounded-lg text-xs font-semibold bg-[#EFE9DC] hover:bg-[#E2D9C8] text-[#333324] border border-[#D5CDC0] shrink-0"
+              >
+                Copyright & Legal (Pg 2)
+              </button>
+              <button
+                onClick={() => {
+                  onSelectPage(3);
+                  onClose();
+                }}
+                className="px-3 py-1 rounded-lg text-xs font-semibold bg-[#EFE9DC] hover:bg-[#E2D9C8] text-[#333324] border border-[#D5CDC0] shrink-0"
+              >
+                About Author (Pg 3)
+              </button>
             </div>
 
             {/* Act Quick Filter Chips */}
@@ -192,7 +234,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                           </div>
                         )}
                         <div className="text-[11px] text-[#5A5A40]/80 font-mono mt-1 font-medium">
-                          Original PDF Page {chapter.pdfPages.join(', ')}
+                          Page {chapter.pdfPages.join(', ')}
                         </div>
                       </div>
                     </div>
@@ -212,7 +254,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
           </div>
         )}
 
-        {/* Pages Grid View (1 to 39) */}
+        {/* Pages Grid View (1 to 41) */}
         {activeTab === 'pages' && (
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
             <p className="text-xs text-[#77726A]">
@@ -238,6 +280,83 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                   </button>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* Author & Legal Tab */}
+        {activeTab === 'author' && (
+          <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            <div className="p-4 rounded-xl bg-[#F1EAE0] border-2 border-[#D4AF37]/40 space-y-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-xs shrink-0">
+                  <img
+                    src={authorPortraitImg}
+                    alt="Pastor Cecilia Oluwatoyin Fayefunmi"
+                    className="w-full h-full object-cover object-center"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-sans font-black text-base text-[#0F172A]">
+                    {BOOK_METADATA.author}
+                  </h3>
+                  <p className="text-xs text-[#78350F] font-serif italic font-bold">
+                    Teacher of God’s Word & Author
+                  </p>
+                </div>
+              </div>
+              <p className="font-sans text-xs sm:text-[13.5px] text-[#0F172A] leading-relaxed font-medium">
+                {BOOK_METADATA.authorBio}
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-[#CBD5E1] space-y-2">
+              <div className="flex items-center space-x-2">
+                <BookMarked className="w-4 h-4 text-[#78350F]" />
+                <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#0F172A]">
+                  Other Publications
+                </h4>
+              </div>
+              <p className="text-xs sm:text-[13px] text-[#1E293B] leading-relaxed font-medium">
+                • <strong>“At the Throne of Grace”</strong> — A guide to entering God's presence in prayer.
+                <br />
+                • <strong>“Daily Grace”</strong> — Devotionals inspired by the Holy Spirit since 2010.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-[#CBD5E1] space-y-1 text-xs text-[#0F172A]">
+              <div className="flex items-center space-x-2 font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#78350F]" />
+                <span>Copyright & Disclaimer</span>
+              </div>
+              <p className="font-mono text-[11px] text-[#0F172A] font-semibold">
+                {BOOK_METADATA.copyright}
+              </p>
+              <p className="text-[11px] sm:text-xs text-[#334155] leading-relaxed pt-1 font-medium">
+                {BOOK_METADATA.disclaimer}
+              </p>
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                onClick={() => {
+                  onSelectPage(3);
+                  onClose();
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-[#5A5A40] hover:bg-[#484833] text-white font-bold text-xs uppercase tracking-wider transition-colors text-center"
+              >
+                Go to Author Page (Page 3)
+              </button>
+              <button
+                onClick={() => {
+                  onSelectPage(2);
+                  onClose();
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-[#E8E4DD] hover:bg-[#DCD6CA] text-[#1E1E14] font-bold text-xs uppercase tracking-wider transition-colors text-center"
+              >
+                Go to Copyright (Page 2)
+              </button>
             </div>
           </div>
         )}

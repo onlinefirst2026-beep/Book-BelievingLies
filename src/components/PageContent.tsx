@@ -2,6 +2,8 @@ import React from 'react';
 import { BookPage, BookChapter, ReaderSettings } from '../types';
 import { BookIllustration } from './Illustrations';
 import { ChapterRealisticImage } from './ChapterThemeImage';
+import { CopyrightPage } from './CopyrightPage';
+import { AuthorPage } from './AuthorPage';
 import { Bookmark, Sparkles, BookOpen, ScrollText } from 'lucide-react';
 
 interface PageContentProps {
@@ -171,6 +173,16 @@ export const PageContent: React.FC<PageContentProps> = ({
     return highlightScriptures(text, isDark);
   };
 
+  // Custom Dedicated Page for Copyright & Legal Notice (Page 2)
+  if (chapterId === 'copyright-page' || pageNum === 2) {
+    return <CopyrightPage settings={settings} pageNum={pageNum || 2} isLeftPage={isLeftPage} />;
+  }
+
+  // Custom Dedicated Page for About the Author & Other Publications (Page 3)
+  if (chapterId === 'author-page' || pageNum === 3) {
+    return <AuthorPage settings={settings} pageNum={pageNum || 3} isLeftPage={isLeftPage} />;
+  }
+
   // Facing Chapter Spread on the Left Page
   if (isFacingSpread && facingChapter) {
     return (
@@ -237,8 +249,8 @@ export const PageContent: React.FC<PageContentProps> = ({
   return (
     <article 
       id={`page-sheet-${pageNum || 'chapter'}`}
-      className={`relative h-full flex flex-col justify-between p-5 sm:p-7 md:p-8 select-text transition-colors duration-300 ${getThemeClass()} ${getFontFamilyClass()} ${getLineHeightClass()}`}
-      style={{ fontSize: `${settings.fontSize}px` }}
+      className={`relative h-full flex flex-col justify-between p-4 sm:p-6 md:p-8 select-text transition-colors duration-300 ${getThemeClass()} ${getFontFamilyClass()} ${getLineHeightClass()}`}
+      style={{ fontSize: `max(15px, ${settings.fontSize}px)` }}
     >
       {/* Top Header Bar */}
       <header className="flex items-center justify-between border-b border-current/20 pb-2 mb-3 text-xs uppercase tracking-widest">

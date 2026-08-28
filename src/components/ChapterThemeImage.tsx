@@ -7,6 +7,19 @@ import oldProphetImg from '../assets/images/old_prophet_bethel_1787926631230.jpg
 import sanctuaryImg from '../assets/images/sanctuary_holy_light_1787926649772.jpg';
 import modernDigitalImg from '../assets/images/modern_digital_world_1787926665849.jpg';
 import prophetTombImg from '../assets/images/prophets_tomb_memorial_1787926681637.jpg';
+import ch6BanquetImg from '../assets/images/ch6_banquet_rejection_1787932494673.jpg';
+import ch9MirrorImg from '../assets/images/ch9_mirror_deception_1787932518354.jpg';
+import ch10AngelImg from '../assets/images/ch10_counterfeit_angel_1787932531359.jpg';
+import ch13ModernCityImg from '../assets/images/ch13_modern_city_lies_1787932544514.jpg';
+import ch14StageImg from '../assets/images/ch14_false_prophet_stage_1787932559277.jpg';
+import ch15DigitalImg from '../assets/images/ch15_digital_social_media_1787932574667.jpg';
+import ch23YouthImg from '../assets/images/ch23_youth_battle_truth_1787932588452.jpg';
+import ch24FamilyImg from '../assets/images/ch24_family_teaching_bible_1787932603014.jpg';
+import ch26LighthouseImg from '../assets/images/ch26_lighthouse_truth_1787932618332.jpg';
+import ch27ScaleImg from '../assets/images/ch27_counterfeit_gold_scale_1787932632663.jpg';
+import ch29NarrowPathImg from '../assets/images/ch29_narrow_path_obedience_1787932651726.jpg';
+import ch30PillarImg from '../assets/images/ch30_standing_alone_pillar_1787932669311.jpg';
+import ch32MonumentImg from '../assets/images/ch32_prophet_grave_monument_1787932682681.jpg';
 import { Sparkles } from 'lucide-react';
 
 export interface ThemeImageMeta {
@@ -55,13 +68,13 @@ export const CHAPTER_REALISTIC_IMAGES: Record<string, ThemeImageMeta> = {
     themeTag: "1 Timothy 3:15 • House of God"
   },
   'modern': {
-    src: modernDigitalImg,
-    alt: "Ancient Bible held amidst glowing city lights and digital screens",
+    src: ch13ModernCityImg,
+    alt: "Modern city lights and digital screens flashing worldly philosophies",
     caption: "Navigating digital misinformation and modern cultural lies",
     themeTag: "2 Timothy 4:3 • Modern Deceptions"
   },
   'memorial': {
-    src: prophetTombImg,
+    src: ch32MonumentImg,
     alt: "Ancient stone memorial in the hills of Judah at sunset",
     caption: "A timeless monument reminding every generation to obey God's Word",
     themeTag: "1 Kings 13:31 • Lessons from the Grave"
@@ -100,39 +113,39 @@ export const CHAPTER_REALISTIC_IMAGES: Record<string, ThemeImageMeta> = {
   },
   'ch-5': {
     src: bethelAltarImg,
-    alt: "Prophet standing firmly against corrupted state religion",
+    alt: "Prophet standing firmly against corrupted state religion at the split altar",
     caption: "Standing courageously for biblical truth when the entire culture opposes it",
-    themeTag: "Chapter 5 • Standing for Truth"
+    themeTag: "Chapter 5 • When Truth Confronts Culture"
   },
   'ch-6': {
-    src: bethelAltarImg,
-    alt: "Royal palace and tempting banquet offers",
+    src: ch6BanquetImg,
+    alt: "Royal palace banquet table with gold chalices and prophet declining royal gifts",
     caption: "Resisting the allure of royal flattery, gifts, and comfortable invitations",
-    themeTag: "Chapter 6 • The King's Invitation"
+    themeTag: "Chapter 6 • The Old Prophet Appears & King's Offer"
   },
   'ch-7': {
     src: oldProphetImg,
     alt: "Elderly prophet in ancient stone room in Bethel",
-    caption: "The tragic paradox of an old prophet living in compromise",
-    themeTag: "Chapter 7 • The Old Prophet of Bethel"
+    caption: "The tragic paradox of an old prophet speaking subtle religious deception",
+    themeTag: "Chapter 7 • The Most Dangerous Lies Sound Spiritual"
   },
   'ch-8': {
     src: prophetOakImg,
     alt: "Resting beneath the massive oak tree",
     caption: "The perilous moment when vigilance relaxes under the shade of comfort",
-    themeTag: "Chapter 8 • Resting Under the Oak"
+    themeTag: "Chapter 8 • The Tragedy of Distracted Obedience"
   },
   'ch-9': {
-    src: oldProphetImg,
-    alt: "Old prophet speaking deceptive words",
-    caption: "The deceptive psychology that leads sincere believers to embrace falsehoods",
+    src: ch9MirrorImg,
+    alt: "Brass mirror reflecting distorted double image with hourglass and cracked stone",
+    caption: "The deceptive psychology and rationalizations that lead minds to embrace falsehoods",
     themeTag: "Chapter 9 • Why People Believe Lies"
   },
   'ch-10': {
-    src: oldProphetImg,
-    alt: "False spiritual authority masquerading as an angelic message",
-    caption: "Counterfeits that disguise deception behind spiritual titles and emotional warmth",
-    themeTag: "Chapter 10 • Emotional Manipulation"
+    src: ch10AngelImg,
+    alt: "Counterfeit glowing figure tested and exposed by genuine scripture scroll",
+    caption: "Counterfeits that disguise deception behind false authority and emotional manipulation",
+    themeTag: "Chapter 10 • Emotional Manipulation & False Authority"
   },
   'ch-11': {
     src: prophetOakImg,
@@ -147,22 +160,22 @@ export const CHAPTER_REALISTIC_IMAGES: Record<string, ThemeImageMeta> = {
     themeTag: "Chapter 12 • The Lion on the Road"
   },
   'ch-13': {
-    src: modernDigitalImg,
-    alt: "Modern vast illuminated metropolis and digital screens",
+    src: ch13ModernCityImg,
+    alt: "Vast modern neon-lit metropolis with glowing billboards of conflicting philosophies",
     caption: "Navigating the flood of subtle deceptions across 21st-century society",
     themeTag: "Chapter 13 • Modern Lies in the Present Age"
   },
   'ch-14': {
-    src: modernDigitalImg,
-    alt: "Spotlights and modern charismatic entertainment",
-    caption: "Discerning true prophetic authenticity from charismatic entertainment",
-    themeTag: "Chapter 14 • Modern False Prophets"
+    src: ch14StageImg,
+    alt: "Modern arena stage with theatrical spotlights and charismatic showmanship",
+    caption: "Discerning true prophetic authenticity from charismatic entertainment and spectacle",
+    themeTag: "Chapter 14 • False Prophets in Modern Times"
   },
   'ch-15': {
-    src: modernDigitalImg,
-    alt: "Glowing smartphones and digital matrix in modern era",
+    src: ch15DigitalImg,
+    alt: "Glowing smartphone screens with social media feeds and notification algorithms",
     caption: "Algorithms, viral misinformation, and the digital battleground for the mind",
-    themeTag: "Chapter 15 • Social Media & Digital Deception"
+    themeTag: "Chapter 15 • Social Media and Digital Deception"
   },
   'ch-16': {
     src: bethelAltarImg,
@@ -184,13 +197,13 @@ export const CHAPTER_REALISTIC_IMAGES: Record<string, ThemeImageMeta> = {
   },
   'ch-19': {
     src: sanctuaryImg,
-    alt: "Watchmen standing on the towers of the sanctuary",
+    alt: "Watchmen standing in holy sanctuary with shafts of golden light",
     caption: "Developing sharp spiritual senses to perceive deceptive currents in the last days",
     themeTag: "Chapter 19 • Discernment in the Last Days"
   },
   'ch-20': {
     src: scrollTruthImg,
-    alt: "Ancient brass balance scales testing doctrine against Scripture",
+    alt: "Ancient scripture scroll testing every doctrine and message",
     caption: "Weighing every prophecy, doctrine, and trend against Scripture",
     themeTag: "Chapter 20 • Testing Every Voice"
   },
@@ -207,74 +220,74 @@ export const CHAPTER_REALISTIC_IMAGES: Record<string, ThemeImageMeta> = {
     themeTag: "Chapter 22 • The Role of Prayer and Scripture"
   },
   'ch-23': {
-    src: prophetOakImg,
-    alt: "Young person standing on mountain peak looking at sunrise",
-    caption: "Empowering a new generation to withstand cultural pressures and lies",
-    themeTag: "Chapter 23 • Young People & Battle for Truth"
+    src: ch23YouthImg,
+    alt: "Young Christian men and women standing courageously with open Bibles on campus",
+    caption: "Empowering the next generation to withstand secular pressures and cultural lies",
+    themeTag: "Chapter 23 • Young People and the Battle for Truth"
   },
   'ch-24': {
-    src: oldProphetImg,
-    alt: "Spiritual elder and fatherly guidance",
-    caption: "The sacred duty of leaders and parents to guide with godly integrity",
-    themeTag: "Chapter 24 • Parents, Leaders & Responsibility"
+    src: ch24FamilyImg,
+    alt: "Christian parents at home teaching their children around the family Bible",
+    caption: "The sacred duty of parents and leaders to teach God's Word with integrity",
+    themeTag: "Chapter 24 • Parents, Leaders, and Responsibility"
   },
   'ch-25': {
     src: sanctuaryImg,
-    alt: "Grand historic stone cathedral interior with radiant light",
+    alt: "Grand historic stone church sanctuary with radiant holy light",
     caption: "Safeguarding the church from theological dilution and worldly conformity",
-    themeTag: "Chapter 25 • Churches & Crisis of Deception"
+    themeTag: "Chapter 25 • Churches and the Crisis of Deception"
   },
   'ch-26': {
-    src: sanctuaryImg,
-    alt: "Brilliant celestial light piercing through darkness",
-    caption: "The immutable, unchanging nature of God's eternal truth in an age of confusion",
+    src: ch26LighthouseImg,
+    alt: "Majestic stone lighthouse beam piercing through dense fog and turbulent storm waves",
+    caption: "God's eternal, unshakeable truth shining as our guiding light in an age of confusion",
     themeTag: "Chapter 26 • Truth in an Age of Confusion"
   },
   'ch-27': {
-    src: sanctuaryImg,
-    alt: "Examining spiritual fruit and motives to expose counterfeits",
-    caption: "Examining spiritual fruit and motives to expose subtle counterfeits",
-    themeTag: "Chapter 27 • Recognizing Spiritual Counterfeits"
+    src: ch27ScaleImg,
+    alt: "Antique jeweler balance scale testing pure authentic gold against counterfeit coin",
+    caption: "Examining spiritual fruit and testing doctrines to expose subtle counterfeits",
+    themeTag: "Chapter 27 • How to Recognize Spiritual Counterfeits"
   },
   'ch-28': {
     src: bethelAltarImg,
     alt: "Awe-inspiring presence of Almighty God",
-    caption: "Restoring the holy reverence and awe due to Almighty God",
+    caption: "Restoring holy reverence and awe due to Almighty God above culture",
     themeTag: "Chapter 28 • Recovering the Fear of God"
   },
   'ch-29': {
-    src: bethelAltarImg,
-    alt: "Solitary footsteps choosing divine alignment over popular approval",
-    caption: "Choosing divine alignment even when it costs human applause",
+    src: ch29NarrowPathImg,
+    alt: "Lone pilgrim walking the narrow upward rocky path toward dawn sunrise",
+    caption: "Choosing divine alignment and obedience over public applause and popularity",
     themeTag: "Chapter 29 • Obedience Above Popularity"
   },
   'ch-30': {
-    src: prophetTombImg,
-    alt: "Ancient stone fortress enduring the storms",
-    caption: "The unwavering fortitude to stand alone when all others bow",
+    src: ch30PillarImg,
+    alt: "Solitary believer standing firm like a rock fortress amidst fierce desert winds",
+    caption: "The unwavering fortitude to stand alone for God when all others compromise",
     themeTag: "Chapter 30 • Standing Alone for Truth"
   },
   'ch-31': {
     src: lionRoadImg,
-    alt: "Light breaking through the clouds after the storm",
+    alt: "Solemn scene on the road of redemption and God's call to repentance",
     caption: "The enduring mercy and redemption of God amidst human brokenness",
-    themeTag: "Chapter 31 • The Mercy of God"
+    themeTag: "Chapter 31 • The Mercy of God Despite Human Failure"
   },
   'ch-32': {
-    src: prophetTombImg,
-    alt: "Ancient stone tomb monument in the hills of Judah",
-    caption: "The prophet's tomb stands as a perpetual warning across all generations",
-    themeTag: "Chapter 32 • Lessons from the Grave"
+    src: ch32MonumentImg,
+    alt: "Ancient carved stone tomb monument and memorial pillar in the Judean hills at sunset",
+    caption: "The prophet's tomb stands as a timeless monument: finishing faithfully matters",
+    themeTag: "Chapter 32 • Lessons from the Grave of the Prophet"
   },
   'ch-33': {
     src: scrollTruthImg,
-    alt: "Armor of God and compass on sacred parchment",
+    alt: "Ancient scripture scroll and armor of God principles",
     caption: "Ten practical and actionable spiritual disciplines to guard against deception",
     themeTag: "Chapter 33 • Practical Steps to Avoid Deception"
   },
   'conclusion': {
-    src: prophetTombImg,
-    alt: "Sunset over ancient hills",
+    src: ch32MonumentImg,
+    alt: "Sunset over ancient hills and monument",
     caption: "The decisive moment to choose truth before the window of opportunity closes",
     themeTag: "Conclusion • Choose Truth Before It Is Too Late"
   },
@@ -370,11 +383,8 @@ export const ChapterRealisticImage: React.FC<ChapterRealisticImageProps> = ({
         
         {/* Caption bar */}
         <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between text-[11px] text-white">
-          <span className="font-bold drop-shadow-md truncate max-w-[80%] text-[#FAF8F5]">
+          <span className="font-bold drop-shadow-md truncate max-w-[90%] text-[#FAF8F5]">
             {meta.themeTag}
-          </span>
-          <span className="text-[9px] font-bold uppercase tracking-wider bg-black/70 px-2 py-0.5 rounded backdrop-blur-xs text-[#E8D5B5] border border-white/10">
-            Ultra-Realistic
           </span>
         </div>
       </div>
@@ -384,3 +394,4 @@ export const ChapterRealisticImage: React.FC<ChapterRealisticImageProps> = ({
     </div>
   );
 };
+

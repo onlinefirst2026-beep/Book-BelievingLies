@@ -9,6 +9,7 @@ import { BookReader } from './components/BookReader';
 import { TableOfContents } from './components/TableOfContents';
 import { SettingsModal } from './components/SettingsModal';
 import { SearchBarModal } from './components/SearchBar';
+import { AuthorModal } from './components/AuthorModal';
 import { ReaderSettings, Bookmark, BookChapter } from './types';
 import { PDF_PAGES, BOOK_CHAPTERS } from './data/bookData';
 import { audioEngine } from './utils/audioEngine';
@@ -33,9 +34,10 @@ const DEFAULT_SETTINGS: ReaderSettings = {
 export default function App() {
   const [viewMode, setViewMode] = useState<'cover' | 'reader'>('cover');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [isTOC沢山Open, setIsTOCOpen] = useState<boolean>(false);
+  const [isTOCOpen, setIsTOCOpen] = useState<boolean>(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [isAuthorOpen, setIsAuthorOpen] = useState<boolean>(false);
 
   // Persistent settings
   const [settings, setSettings] = useState<ReaderSettings>(() => {
@@ -169,6 +171,7 @@ export default function App() {
           savedPage={savedPage}
           onOpenTOC={() => setIsTOCOpen(true)}
           onOpenSettings={() => setIsSettingsOpen(true)}
+          onOpenAuthor={() => setIsAuthorOpen(true)}
         />
       ) : (
         <BookReader
@@ -179,6 +182,7 @@ export default function App() {
           onOpenTOC={() => setIsTOCOpen(true)}
           onOpenSettings={() => setIsSettingsOpen(true)}
           onOpenSearch={() => setIsSearchOpen(true)}
+          onOpenAuthor={() => setIsAuthorOpen(true)}
           onReturnHome={() => setViewMode('cover')}
           onPageChange={handlePageChange}
         />
@@ -186,7 +190,7 @@ export default function App() {
 
       {/* Navigation / Table of Contents Modal */}
       <TableOfContents
-        isOpen={isTOC沢山Open}
+        isOpen={isTOCOpen}
         onClose={() => setIsTOCOpen(false)}
         currentPage={currentPage}
         onSelectPage={(page) => {
@@ -196,6 +200,10 @@ export default function App() {
         onSelectChapter={handleSelectChapter}
         bookmarks={bookmarks}
         onRemoveBookmark={handleRemoveBookmark}
+        onOpenAuthorModal={() => {
+          setIsTOCOpen(false);
+          setIsAuthorOpen(true);
+        }}
       />
 
       {/* Customization Settings Modal */}
@@ -212,6 +220,16 @@ export default function App() {
         onClose={() => setIsSearchOpen(false)}
         onJumpToPage={(page) => {
           handlePageChange(page);
+          setViewMode('reader');
+        }}
+      />
+
+      {/* Author & Legal Details Modal */}
+      <AuthorModal
+        isOpen={isAuthorOpen}
+        onClose={() => setIsAuthorOpen(false)}
+        onJumpToAuthorPage={() => {
+          handlePageChange(3);
           setViewMode('reader');
         }}
       />

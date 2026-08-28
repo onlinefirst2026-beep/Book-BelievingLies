@@ -4,8 +4,17 @@ export const BOOK_METADATA = {
   title: "The Danger of Believing Lies",
   subtitle: "Lessons from the Old and Young Prophet in 1 Kings 13 for This Generation",
   scripturalAnchor: "1 Kings 13:1-32",
+  author: "Pastor Cecilia Oluwatoyin Fayefunmi",
+  authorTitle: "Teacher of God's Word & Author",
+  otherBooks: ["At the Throne of Grace"],
+  devotionalSeries: "Daily Grace (Since 2010)",
+  location: "Vienna, Austria",
+  origin: "Lagos, Nigeria",
+  authorBio: "Cecilia Fayefunmi is a teacher of Gods word. She is anointed by the Holy Spirit to preach the undiluted word of God and to impact the message of love and joy to the people of God. Under the inspiration of the Holy Spirit in 2010, she started writing devotionals titled Daily Grace which has been a source of inspiration to many. She was born in Lagos, Nigeria. Lived in Lagos for a reasonable length of time and have a pleasant childhood with a lot of love from her family. She is compassionate, outgoing and very dedicated. Also she is a good listener and enjoys helping others. She believe in treating others the way, she would want to be treated. She has been married to Evangelist Fayefunmi since 1982 and has three children. Cecilia lives in Vienna, Austria with her husband and children.",
+  copyright: "Copyright © 2026 Pastor Cecilia Oluwatoyin Fayefunmi. All rights reserved.",
+  disclaimer: "This publication is intended solely for spiritual edification, biblical teaching, and personal ministry development. The scriptural expositions, doctrinal commentaries, and practical safeguards presented herein are grounded in the undiluted Word of God. No part of this book may be reproduced, distributed, stored in a retrieval system, or transmitted in any form or by any means—electronic, mechanical, photocopying, recording, or otherwise—without prior written permission from the author and copyright holder, except for brief quotations used in theological reviews, sermons, and critical articles as permitted by international copyright law. Scripture quotations are taken from the Holy Bible.",
   totalChapters: 33,
-  totalPages: 39,
+  totalPages: 41,
   estimatedReadTime: "45 mins",
   publicationYear: "2026 Edition",
   description: "A profound spiritual guide examining the tragic encounter between the young prophet and the old prophet in Bethel, uncovering timeless safeguards against spiritual deception, emotional manipulation, cultural compromise, and half-truths in our modern digital era."
@@ -1489,11 +1498,11 @@ export const BOOK_CHAPTERS: BookChapter[] = [
   }
 ];
 
-// PDF Page mapping (1 to 39) with each chapter starting cleanly at the top of its page
+// PDF Page mapping (1 to 41) with each chapter starting cleanly at the top of its page
 export const PDF_PAGES: BookPage[] = [
   {
     pageNumber: 1,
-    title: "Dedication & Foreword",
+    title: "Title & Dedication",
     chapterId: "front-matter",
     isChapterStart: false,
     illustrationType: "tree",
@@ -1505,6 +1514,10 @@ export const PDF_PAGES: BookPage[] = [
       {
         type: "subheading",
         text: "Lessons from the Old and Young Prophet in 1 Kings 13 for This Generation"
+      },
+      {
+        type: "paragraph",
+        text: "Author: Pastor Cecilia Oluwatoyin Fayefunmi"
       },
       {
         type: "scripture",
@@ -1524,17 +1537,86 @@ export const PDF_PAGES: BookPage[] = [
   },
   {
     pageNumber: 2,
+    title: "Copyright & Disclaimer",
+    chapterId: "copyright-page",
+    isChapterStart: false,
+    blocks: [
+      {
+        type: "heading",
+        text: "Copyright & Publishing Notice"
+      },
+      {
+        type: "quote",
+        text: "Copyright © 2026 Pastor Cecilia Oluwatoyin Fayefunmi\nAll Rights Reserved Worldwide.\nPublished in Vienna, Austria & Lagos, Nigeria.",
+        author: "Legal Notice"
+      },
+      {
+        type: "subheading",
+        text: "Ministry & Theological Disclaimer"
+      },
+      {
+        type: "paragraph",
+        text: "This publication is intended solely for spiritual edification, biblical teaching, Christian discipleship, and personal ministry development. The scriptural expositions, doctrinal commentaries, and practical safeguards presented herein are grounded in the undiluted Word of God."
+      },
+      {
+        type: "paragraph",
+        text: "No part of this book may be reproduced, distributed, stored in a retrieval system, or transmitted in any form or by any means—electronic, mechanical, photocopying, recording, or otherwise—without prior written permission from the author and copyright holder, except for brief quotations used in theological reviews, sermons, and critical articles as permitted by international copyright law."
+      },
+      {
+        type: "callout",
+        text: "Scripture quotations are taken from the Holy Bible to inspire holy living, discernment, and unwavering loyalty to God's divine commands."
+      }
+    ]
+  },
+  {
+    pageNumber: 3,
+    title: "About the Author",
+    chapterId: "author-page",
+    isChapterStart: false,
+    illustrationType: "scripture",
+    blocks: [
+      {
+        type: "heading",
+        text: "About Pastor Cecilia Oluwatoyin Fayefunmi"
+      },
+      {
+        type: "subheading",
+        text: "Teacher of God’s Word & Devotional Author"
+      },
+      {
+        type: "paragraph",
+        text: "Cecilia Fayefunmi is a teacher of Gods word. She is anointed by the Holy Spirit to preach the undiluted word of God and to impact the message of love and joy to the people of God. Under the inspiration of the Holy Spirit in 2010, she started writing devotionals titled Daily Grace which has been a source of inspiration to many."
+      },
+      {
+        type: "paragraph",
+        text: "She was born in Lagos, Nigeria. Lived in Lagos for a reasonable length of time and have a pleasant childhood with a lot of love from her family. She is compassionate, outgoing and very dedicated. Also she is a good listener and enjoys helping others. She believe in treating others the way, she would want to be treated."
+      },
+      {
+        type: "paragraph",
+        text: "She has been married to Evangelist Fayefunmi since 1982 and has three children. Cecilia lives in Vienna, Austria with her husband and children."
+      },
+      {
+        type: "quote",
+        text: "Other Books by Author:\n• “At the Throne of Grace” — A profound biblical guide on approaching God's presence in prayer.\n• “Daily Grace” — Inspiring Christian devotional series (since 2010).",
+        author: "Publications & Works"
+      }
+    ]
+  },
+  {
+    pageNumber: 4,
     title: "Table of Contents (Part I)",
     chapterId: "toc-1",
     blocks: [
       { type: "heading", text: "Table of Contents (Part I)" },
-      { type: "paragraph", text: "• Introduction: A Generation Surrounded by Lies" },
+      { type: "paragraph", text: "• Dedication & Copyright Notice (Pages 1–2)" },
+      { type: "paragraph", text: "• About Pastor Cecilia Fayefunmi & Other Books (Page 3)" },
+      { type: "paragraph", text: "• Introduction: A Generation Surrounded by Lies (Page 6)" },
       { type: "paragraph", text: "• Chapter 1: The Story of the Young Prophet" },
       { type: "paragraph", text: "• Chapter 2: The Assignment from God" },
       { type: "paragraph", text: "• Chapter 3: Jeroboam and the Corrupt Altar" },
       { type: "paragraph", text: "• Chapter 4: The Power of Clear Instructions" },
       { type: "paragraph", text: "• Chapter 5: Standing for Truth in a Corrupt Culture" },
-      { type: "paragraph", text: "• Chapter 6: The King\x27s Invitation" },
+      { type: "paragraph", text: "• Chapter 6: The King's Invitation" },
       { type: "paragraph", text: "• Chapter 7: The Old Prophet of Bethel" },
       { type: "paragraph", text: "• Chapter 8: Resting Under the Oak" },
       { type: "paragraph", text: "• Chapter 9: Why People Believe Lies" },
@@ -1542,17 +1624,17 @@ export const PDF_PAGES: BookPage[] = [
       { type: "paragraph", text: "• Chapter 11: The Cost of One Wrong Decision" },
       { type: "paragraph", text: "• Chapter 12: The Lion on the Road" },
       { type: "paragraph", text: "• Chapter 13: Modern Lies in the Present Age" },
-      { type: "paragraph", text: "• Chapter 14: False Prophets in Modern Times" },
-      { type: "paragraph", text: "• Chapter 15: Social Media and Digital Deception" },
-      { type: "paragraph", text: "• Chapter 16: The Spirit of Compromise" }
+      { type: "paragraph", text: "• Chapter 14: False Prophets in Modern Times" }
     ]
   },
   {
-    pageNumber: 3,
+    pageNumber: 5,
     title: "Table of Contents (Part II)",
     chapterId: "toc-2",
     blocks: [
       { type: "heading", text: "Table of Contents (Part II)" },
+      { type: "paragraph", text: "• Chapter 15: Social Media and Digital Deception" },
+      { type: "paragraph", text: "• Chapter 16: The Spirit of Compromise" },
       { type: "paragraph", text: "• Chapter 17: When Convenience Replaces Conviction" },
       { type: "paragraph", text: "• Chapter 18: The Danger of Half-Truths" },
       { type: "paragraph", text: "• Chapter 19: Discernment in the Last Days" },
@@ -1570,12 +1652,12 @@ export const PDF_PAGES: BookPage[] = [
       { type: "paragraph", text: "• Chapter 31: The Mercy of God Despite Human Failure" },
       { type: "paragraph", text: "• Chapter 32: Lessons from the Grave of the Prophet" },
       { type: "paragraph", text: "• Chapter 33: Practical Steps to Avoid Deception" },
-      { type: "paragraph", text: "• Conclusion & Final Prayer" }
+      { type: "paragraph", text: "• Conclusion & Final Prayer (Page 41)" }
     ]
   },
-  // All 36 chapters (Intro, 1-33, Conclusion, Prayer) starting cleanly at top of page 4 through 39
+  // All 36 chapters (Intro, 1-33, Conclusion, Prayer) starting cleanly at top of page 6 through 41
   ...BOOK_CHAPTERS.map((ch, idx) => ({
-    pageNumber: idx + 4,
+    pageNumber: idx + 6,
     title: ch.title,
     subtitle: ch.subtitle,
     chapterId: ch.id,
@@ -1585,7 +1667,7 @@ export const PDF_PAGES: BookPage[] = [
   }))
 ];
 
-// Update BOOK_CHAPTERS pdfPages to point to [idx + 4]
+// Update BOOK_CHAPTERS pdfPages to point to [idx + 6]
 BOOK_CHAPTERS.forEach((ch, idx) => {
-  ch.pdfPages = [idx + 4];
+  ch.pdfPages = [idx + 6];
 });
