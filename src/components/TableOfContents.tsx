@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { BookChapter, Bookmark } from '../types';
 import { BOOK_CHAPTERS, PDF_PAGES, BOOK_METADATA } from '../data/bookData';
-import authorPortraitImg from '../assets/images/author_portrait_real_cecilia_1787931354245.jpg';
-import { X, Search, Bookmark as BookmarkIcon, BookOpen, Layers, CheckCircle2, ChevronRight, Hash, User, ShieldCheck, Heart, BookMarked, Sparkles } from 'lucide-react';
+import { X, Search, Bookmark as BookmarkIcon, BookOpen, Layers, CheckCircle2, ChevronRight, Hash, User, ShieldCheck, Heart, BookMarked, Sparkles, BookCheck } from 'lucide-react';
 
 interface TableOfContentsProps {
   isOpen: boolean;
@@ -287,26 +286,27 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
         {/* Author & Legal Tab */}
         {activeTab === 'author' && (
           <div className="flex-1 overflow-y-auto p-6 space-y-4">
-            <div className="p-4 rounded-xl bg-[#F1EAE0] border-2 border-[#D4AF37]/40 space-y-3">
+            <div className="p-5 rounded-2xl bg-[#0B1220] text-white border-2 border-[#D4AF37] shadow-lg space-y-3">
               <div className="flex items-center space-x-3">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-xs shrink-0">
-                  <img
-                    src={authorPortraitImg}
-                    alt="Pastor Cecilia Oluwatoyin Fayefunmi"
-                    className="w-full h-full object-cover object-center"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1E293B] to-[#0A0E17] border-2 border-[#D4AF37] shadow-md flex flex-col items-center justify-center text-[#FACC15] shrink-0">
+                  <BookCheck className="w-6 h-6" />
                 </div>
-                <div>
-                  <h3 className="font-sans font-black text-base text-[#0F172A]">
-                    {BOOK_METADATA.author}
-                  </h3>
-                  <p className="text-xs text-[#78350F] font-serif italic font-bold">
-                    Teacher of God’s Word & Author
+                <div className="flex-1 min-w-0">
+                  <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase tracking-wider bg-[#FACC15] text-[#0B1220] shadow-sm mb-1">
+                    <Sparkles className="w-2.5 h-2.5" />
+                    <span>Author & Teacher</span>
+                  </span>
+                  <div className="bg-[#050811] border border-[#D4AF37]/60 rounded-lg px-2.5 py-1.5 mt-0.5 shadow-inner">
+                    <h3 className="font-sans font-black text-sm sm:text-base text-white tracking-tight leading-tight">
+                      Pastor Cecilia Oluwatoyin Fayefunmi
+                    </h3>
+                  </div>
+                  <p className="text-xs text-[#FDE047] font-serif italic font-bold mt-1">
+                    Devotional Author • Preaching the Undiluted Word
                   </p>
                 </div>
               </div>
-              <p className="font-sans text-xs sm:text-[13.5px] text-[#0F172A] leading-relaxed font-medium">
+              <p className="font-sans text-xs sm:text-[13.5px] text-[#F1F5F9] leading-relaxed font-medium pt-2 border-t border-[#334155]">
                 {BOOK_METADATA.authorBio}
               </p>
             </div>

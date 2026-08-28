@@ -39,10 +39,10 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
       <div className="flex-1 overflow-y-auto pr-1 py-3 space-y-4">
         
         {/* Author Header Banner - High-Contrast Dark Slate Canvas with Pure White & Gold Typography */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 rounded-2xl bg-[#0B1120] text-white border-2 border-[#D4AF37]/60 shadow-lg">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 sm:p-6 rounded-2xl bg-[#0B1220] text-white border-2 border-[#D4AF37] shadow-xl">
           
           {/* Official Author Ministry Emblem Badge */}
-          <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#0F172A] border-2 border-[#D4AF37] shadow-md flex flex-col items-center justify-center text-[#FDE047] p-2 text-center">
+          <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#0A0E17] border-2 border-[#D4AF37] shadow-lg flex flex-col items-center justify-center text-[#FDE047] p-2 text-center">
             <BookCheck className="w-8 h-8 sm:w-10 sm:h-10 text-[#FACC15] drop-shadow-sm mb-1" />
             <span className="text-[9px] font-mono uppercase tracking-widest font-black text-[#F8FAFC]">
               Author
@@ -50,16 +50,18 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
           </div>
 
           {/* Author Titles & Credentials in Crisp High-Contrast Typography */}
-          <div className="flex-1 text-center sm:text-left space-y-1.5">
-            <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-black uppercase tracking-wider bg-[#FACC15] text-[#0B1120] shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
+          <div className="flex-1 w-full text-center sm:text-left space-y-2.5">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-black uppercase tracking-wider bg-[#FACC15] text-[#0B1220] shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#0B1220]" />
               <span>Teacher of God's Word</span>
             </div>
 
-            {/* Author's Name: Prominent, High-Contrast White Heading */}
-            <h1 className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white tracking-tight drop-shadow-sm">
-              {BOOK_METADATA.author}
-            </h1>
+            {/* Author's Name: Explicit High-Contrast Solid Dark Block with Pure White Typography */}
+            <div className="author-name-block bg-[#050811] border-2 border-[#D4AF37]/70 rounded-xl p-3.5 sm:p-4 my-1.5 shadow-inner">
+              <h1 className="author-name font-sans font-black text-xl sm:text-2xl md:text-3xl text-white tracking-tight leading-snug drop-shadow-sm">
+                Pastor Cecilia Oluwatoyin Fayefunmi
+              </h1>
+            </div>
 
             <p className="text-sm sm:text-base font-serif italic font-bold text-[#FDE047]">
               Devotional Author & Minister of the Gospel
@@ -83,23 +85,21 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
           </div>
         </div>
 
-        {/* Biography Paragraphs in High-Contrast Crisp Modern Typography */}
-        <div className={`space-y-3 text-sm sm:text-base leading-relaxed font-sans font-medium ${
-          isDark ? 'text-[#F1F5F9]' : 'text-[#0F172A]'
-        }`}>
-          <p>
-            <strong className="font-extrabold text-black dark:text-white">Pastor Cecilia Oluwatoyin Fayefunmi</strong> is an anointed teacher of God’s Word, called by the Holy Spirit to preach the undiluted truth of Scripture and impart the message of divine love, holy joy, and unshakeable faith to God’s people worldwide.
+        {/* Biography Paragraphs - Explicit Font Color: Black */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#FAF8F5] border border-[#E2D9CC] shadow-xs space-y-3.5 text-sm sm:text-base leading-relaxed font-sans font-medium text-black">
+          <p className="text-black">
+            <strong className="font-extrabold text-black">Pastor Cecilia Oluwatoyin Fayefunmi</strong> is an anointed teacher of God’s Word, called by the Holy Spirit to preach the undiluted truth of Scripture and impart the message of divine love, holy joy, and unshakeable faith to God’s people worldwide.
           </p>
 
-          <p>
-            Under the direct inspiration of the Holy Spirit in 2010, she began authoring the widely celebrated devotional series <strong className="font-serif font-black text-black dark:text-white">“Daily Grace”</strong>, which has stood for over a decade and a half as an uplifting fountain of spiritual wisdom, scriptural discipline, and daily guidance for countless believers.
+          <p className="text-black">
+            Under the direct inspiration of the Holy Spirit in 2010, she began authoring the widely celebrated devotional series <strong className="font-serif font-black text-black">“Daily Grace”</strong>, which has stood for over a decade and a half as an uplifting fountain of spiritual wisdom, scriptural discipline, and daily guidance for countless believers.
           </p>
 
-          <p>
+          <p className="text-black">
             Born and raised in Lagos, Nigeria, she enjoyed a blessed and loving childhood that cultivated her lifelong compassion, joyful spirit, and dedication to serving others. A sincere listener with a generous heart, she lives by the golden biblical principle of treating all people with the love, dignity, and honor they deserve in Christ.
           </p>
 
-          <p>
+          <p className="text-black">
             She has been happily married to Evangelist Fayefunmi since 1982 and is blessed with three children. Pastor Cecilia resides in Vienna, Austria with her family, continuing her vibrant writing, prayer, and teaching ministry across Europe and Africa.
           </p>
         </div>

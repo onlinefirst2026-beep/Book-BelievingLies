@@ -56,11 +56,11 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-[#0F172A]">
           
           {/* Author Profile Header - High-Contrast Dark Slate Banner with Pure White & Gold Text */}
-          <div className="p-5 rounded-2xl bg-[#0B1120] text-white border-2 border-[#D4AF37]/60 shadow-md space-y-4">
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#0B1220] text-white border-2 border-[#D4AF37] shadow-xl space-y-4">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
               
               {/* Author Ministry Emblem Badge */}
-              <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#0F172A] border-2 border-[#D4AF37] shadow-md flex flex-col items-center justify-center text-[#FDE047] p-2 text-center">
+              <div className="relative shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#0A0E17] border-2 border-[#D4AF37] shadow-lg flex flex-col items-center justify-center text-[#FDE047] p-2 text-center">
                 <BookCheck className="w-8 h-8 sm:w-10 sm:h-10 text-[#FACC15] drop-shadow-sm mb-1" />
                 <span className="text-[9px] font-mono uppercase tracking-widest font-black text-[#F8FAFC]">
                   Author
@@ -68,20 +68,25 @@ export const AuthorModal: React.FC<AuthorModalProps> = ({
               </div>
 
               {/* Author Info in Crisp White & Gold */}
-              <div className="flex-1 text-center sm:text-left space-y-1.5">
-                <span className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full text-xs font-mono font-black uppercase tracking-wider bg-[#FACC15] text-[#0B1120] shadow-sm">
-                  <Sparkles className="w-3.5 h-3.5" />
+              <div className="flex-1 w-full text-center sm:text-left space-y-2">
+                <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono font-black uppercase tracking-wider bg-[#FACC15] text-[#0B1220] shadow-sm">
+                  <Sparkles className="w-3.5 h-3.5 text-[#0B1220]" />
                   <span>Teacher of God's Word & Author</span>
                 </span>
-                <h4 className="font-sans font-black text-xl sm:text-2xl md:text-3xl text-white tracking-tight drop-shadow-sm">
-                  {BOOK_METADATA.author}
-                </h4>
+
+                {/* Author's Name in Dedicated High-Contrast Solid Dark Block */}
+                <div className="author-name-block bg-[#050811] border-2 border-[#D4AF37]/70 rounded-xl p-3.5 sm:p-4 my-1.5 shadow-inner">
+                  <h4 className="author-name font-sans font-black text-xl sm:text-2xl md:text-3xl text-white tracking-tight leading-snug drop-shadow-sm">
+                    Pastor Cecilia Oluwatoyin Fayefunmi
+                  </h4>
+                </div>
+
                 <p className="text-xs sm:text-sm font-serif italic text-[#FDE047] font-bold">
                   Devotional Author • Preaching the Undiluted Word
                 </p>
 
                 {/* Quick Details Badges */}
-                <div className="flex flex-wrap gap-2 pt-1 text-xs font-bold">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-xs font-bold">
                   <div className="flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-[#1E293B] border border-[#475569] text-[#F8FAFC] shadow-xs">
                     <MapPin className="w-3.5 h-3.5 text-[#FACC15] shrink-0" />
                     <span>Vienna & Lagos</span>
